@@ -1,0 +1,4 @@
+﻿  stdafx.cpp
+  Main.cpp
+c:\repos\binaryst\binaryst\exception.h(33): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+LINK : fatal error LNK1104: cannot open file 'BinaryST.lib'
