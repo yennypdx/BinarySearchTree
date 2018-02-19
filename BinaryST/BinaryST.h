@@ -51,6 +51,7 @@ public:
 	int treeHeight(bstNode<T> * inNode);
 	void purgeTree(bstNode<T> * inNode);
 	void insert(const T & inElm);
+	void insertRecursively(bstNode<T>* inNode, T inElm);
 	void deleteNode(bstNode<T> * &inNode);
 	bool findAndDeleteNode(const T & inElm);
 public:
@@ -180,6 +181,24 @@ inline void binaryST<T>::insert(const T & inElm)
 	}
 	else {
 		prevNode->right = newNode;
+	}
+}
+
+template<typename T>
+inline void binaryST<T>::insertRecursively(bstNode<T>* inNode, T inElm)
+{
+	if (inNode == nullptr) {
+		binaryST<T>* newNode;
+		newNode->elementVal = inElm;
+		newNode = inNode;
+	}
+	else {
+		if (inElm < inNode->elementVal) {
+			insertRecursively(inNode->left, inElm);
+		}
+		else {
+			insertRecursively(inNode->right, inElm);
+		}
 	}
 }
 
